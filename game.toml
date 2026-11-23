@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Deadheat Road"
+id = "SLPS-00267"
+players = 1
+exe = "disc/slps_002.67"
+disc = "disc/Deadheat Road (Japan).cue"
+discs = ["disc/Deadheat Road (Japan).cue"]
+disc_serials = ["SLPS-00267"]
+load_address = "0x80010000"
+entry_pc = "0x8007A1F8"
+text_size = "0x00094800"
+stack_base = "0x00007F00"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Deadheat Road (Japan) (Track 1).bin"
+cue_name = "Deadheat Road (Japan).cue"
+boot_exe = "slps_002.67"
+known_sizes = [22320480]
+known_md5 = [
+  "e8f930dd000494b5b8554cfdd4260a37",
+]
+known_sha1 = [
+  "3e24a284593c9ff06c3897cbabe555d88ce7bcc6",
+]
+known_crc32 = [
+  "38eee57f",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5500.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Deadheat Road Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 10
+required_disc_fp = "c3d1c48adc63955d79cc90613ff1c21152a2f9e625172f9ba313768a2e36a1ff"

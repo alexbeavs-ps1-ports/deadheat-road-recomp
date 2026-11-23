@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "deadheat-road-psx",
+  "name": "Deadheat Road",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "deadheat-road-recomp",
+  "rom_identity": {
+    "crc32": [
+      "38eee57f"
+    ],
+    "md5": [
+      "e8f930dd000494b5b8554cfdd4260a37"
+    ],
+    "sha1": [
+      "3e24a284593c9ff06c3897cbabe555d88ce7bcc6"
+    ],
+    "disc_serials": [
+      "SLPS-00267"
+    ],
+    "sizes": [
+      22320480
+    ],
+    "filenames": [
+      "Deadheat Road (Japan).cue",
+      "Deadheat Road (Japan) (Track 1).bin"
+    ],
+    "track_counts": [
+      10
+    ],
+    "disc_fps": [
+      "c3d1c48adc63955d79cc90613ff1c21152a2f9e625172f9ba313768a2e36a1ff"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5500.BIN",
+    "profile": "SCPH5500",
+    "crc32": [
+      "ff3eeb8c"
+    ],
+    "md5": [
+      "8dd7d5296a650fac7319bce665a6a53c"
+    ],
+    "sha1": [
+      "b05def971d8ec59f346f2d9ac21fb742e3eb6917"
+    ],
+    "sha256": [
+      "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5500.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/deadheat-road-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "deadheat-road-*-windows-x64.zip",
+      "linux-x64": "deadheat-road-*-linux-x64.zip",
+      "macos-arm64": "deadheat-road-*-macos-arm64.zip",
+      "macos-x64": "deadheat-road-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "deadheat_road.exe",
+    "linux": "deadheat_road",
+    "macos": "deadheat_road"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/deadheat-road-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

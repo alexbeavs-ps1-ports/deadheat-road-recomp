@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Deadheat Road",
+    "id": "SLPS-00267",
+    "boot_exe": "slps_002.67"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Japan",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Deadheat Road (Japan).cue",
+    "bin_name": "Deadheat Road (Japan) (Track 1).bin",
+    "track_counts": [
+      10
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 22320480,
+      "md5": "e8f930dd000494b5b8554cfdd4260a37",
+      "sha1": "3e24a284593c9ff06c3897cbabe555d88ce7bcc6",
+      "crc32": "38eee57f"
+    },
+    "disc_fp": "c3d1c48adc63955d79cc90613ff1c21152a2f9e625172f9ba313768a2e36a1ff"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8007A1F8",
+    "text_size": "0x00094800",
+    "stack_base": "0x00007F00"
+  },
+  "seeds": {
+    "count": 881,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
